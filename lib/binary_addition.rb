@@ -1,6 +1,6 @@
 require './lib/full_adder'
 
-def binary_addition(x, y)
+def add_binary(x, y)
   # initialize output
   sum = ''
 
@@ -34,5 +34,4 @@ def binary_addition(x, y)
   sum
 end
 
-puts binary_addition('011011', '001111') # 27 + 15
-# result: 0101010 = 42
+# puts add_binary('011011', '001111') # 27 + 15 = 42 (0101010)

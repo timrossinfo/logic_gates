@@ -15,15 +15,18 @@ end
 # Secondary operations
 
 def xor_gate(x, y)
-  (x == 1 && y == 0) || (x == 0 && y == 1) ? 1 : 0
-end
-
-def equiv_gate(x, y)
-  x == y ? 1 : 0
+  # (x || y) && !(x && y)
+  and_gate(or_gate(x, y), not_gate(and_gate(x, y)))
 end
 
 def imp_gate(x, y)
-  (x == 0 || y == 1) ? 1 : 0
+  # !x || y
+  or_gate(not_gate(x), y)
+end
+
+def equiv_gate(x, y)
+  # (x && y) || (!x && !y)
+  or_gate(and_gate(x, y), and_gate(not_gate(x), not_gate(y)))
 end
 
 # Complimentary operations

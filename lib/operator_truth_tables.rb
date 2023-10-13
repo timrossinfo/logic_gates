@@ -1,4 +1,4 @@
-require './lib/operations'
+require './lib/operators'
 require 'terminal-table'
 
 def ascii(op, &fn)
